@@ -6,6 +6,12 @@ namespace Nov22_Fundamental
 {
     class ReverseNumber
     {
+		static public void Main()
+		{
+			int num = 4562;
+			Console.Write("Reverse of no. is "
+			+ reversDigits(num));
+		}
 		public static int length(int num)
 		{
 			// returns the length of a given number
@@ -34,7 +40,29 @@ namespace Nov22_Fundamental
             }
             Console.WriteLine("Reverse=" + rev);
             }
-        public void test()
+
+		public static string ReverseString(string s)
+		{
+			char[] array = s.ToCharArray();
+			Array.Reverse(array);
+			return new string(array);
+		}
+
+		static int reversDigits(int num)
+		{
+			// converting number to string
+			string strin = num.ToString();
+
+			// reversing the string
+			strin = ReverseString(strin);
+
+			// converting string to integer
+			num = int.Parse(strin);
+
+			// returning integer
+			return num;
+		}
+		public void test()
         {
 			double a = 423;
 			double b = 0;
